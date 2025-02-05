@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root"; // Your MySQL username
-$password = ""; // Your MySQL password
-$dbname = "diary"; // Your database name
+$username = "root"; 
+$password = ""; 
+$dbname = "diary"; 
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 if (isset($_POST['submit'])) {
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $entry_date = $_POST['entry_date'];  // Get the date from the form
+    $entry_date = $_POST['entry_date'];  
 
     $sql = "INSERT INTO diary_entries (title, content, entry_date) VALUES ('$title', '$content', '$entry_date')";
     if ($conn->query($sql) === TRUE) {
@@ -42,7 +42,7 @@ if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $entry_date = $_POST['entry_date'];  // Get the date from the form
+    $entry_date = $_POST['entry_date'];  
 
     $sql = "UPDATE diary_entries SET title='$title', content='$content', entry_date='$entry_date' WHERE id=$id";
     $conn->query($sql);
@@ -64,7 +64,7 @@ $result = $conn->query($sql);
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"> <!-- Add Google Font -->
     <style>
         body {
-            font-family: 'Poppins', sans-serif;  /* Poppins for body text */
+            font-family: 'Poppins', sans-serif;  
             background: linear-gradient(135deg, #FF9A8B, #FFC3A0, #FFB6B9);
             background-size: 400% 400%;
             animation: gradientBackground 15s ease infinite;
@@ -79,10 +79,10 @@ $result = $conn->query($sql);
         }
 
         h1 {
-            font-family: 'Dancing Script', cursive; /* Dancing Script for the title */
+            font-family: 'Dancing Script', cursive; 
             color: #5e3a8c;
             font-weight: bold;
-            font-size: 3rem; /* Adjust the size for more impact */
+            font-size: 3rem; 
             text-align: center;
             text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
             margin-top: 50px;
